@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <math.h>
 
 #include <stdlib.h>
 using namespace std;
@@ -18,35 +19,40 @@ int32_t main()
                 "\n4 = Division"
                 "\n5 = Factorial"
                 "\n6 = Square"
-                "\n7 = Exit"
+                "\n7 = Square Root"
+                "\n8 = Exit"
                 "\n \n Make a choice: ";
         cin >> opr;
         switch (opr)
         {
+
         // for addition operation in calculator
         case 1:
             cout << "You have selected the Addition Operation.";
             cout << "\n Please enter the two number: \n";
             cin >> num1 >> num2;
             x = num1 + num2;
-            cout << "Sum of two number = " << x;
+            cout << "Sum of two number " << num1 << " & " << num2 << " is: " << x;
             break;
+
         // for subtraction operation in calculator
         case 2:
             cout << "You have selected the Subtraction Operation.";
             cout << "\n Please enter the two number: \n";
             cin >> num1 >> num2;
             x = num1 - num2;
-            cout << "Subtraction of two number = " << x;
+            cout << "Subtraction of two number " << num1 << " & " << num2 << " is: " << x;
             break;
+
         // for multiplication operation in calculator
         case 3:
             cout << "You have selected the Multiplication Operation.";
             cout << "\n Please enter the two number: \n";
             cin >> num1 >> num2;
             x = num1 * num2;
-            cout << "Product of two number = " << x;
+            cout << "Product of two number " << num1 << " & " << num2 << " is: " << x;
             break;
+
         // for division operation in calculator
         case 4:
             cout << "You have selected the Division Operation.";
@@ -62,7 +68,7 @@ int32_t main()
             x = num1 / num2;
             cout << "\n Quotient = " << x;
             break;
-        // Factorial
+           // for factorial operation in calculator
         case 5:
 
             int num, fact;
@@ -74,7 +80,7 @@ int32_t main()
             {
                 fact *= i;
             }
-            cout << "The Factorial is  " << fact << endl;
+            cout << "The Factorial of " << num << " is: " << fact << endl;
             break;
         // to square a number in calculator
         case 6:
@@ -82,15 +88,24 @@ int32_t main()
             cout << "\n Please enter any number: \n";
             cin >> num1;
             x = num1 * num1;
-            cout << "Square is = " << x;
+            cout << "Square of " << num1 << " is: " << x;
             break;
-        case 7:
+ 
+        case 7:      // for square root operation in calculator
+            cout << "You have selected the Square Root Operation.";
+            cout << "\n Please enter any number: \n";
+            cin >> num;
+            x = sqrt(num); // use sqrt() function to find the Square Root
+            cout << " Square Root of " << num << " is:  " << x << endl;
+            break; // break the function
+
+        case 8:
             exit(0); // terminate the program
             break;
         default:
             cout << "\n Something went wrong..!!";
             break;
         }
-        cout << "\n ----------------------------------------- \n";
+        cout << "\n ***********************************\n";
     } while (opr != 6);
 }
